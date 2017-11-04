@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './Neko2.svg';
 import './App.css';
 import { FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 
