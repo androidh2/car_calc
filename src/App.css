@@ -23,6 +23,29 @@
 
 .App-intro {
   font-size: large;
+  /*
+  background-color: #B5CAA0;
+  */
+}
+
+.Table-Main {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: right;
+}
+
+.App-result {
+  color: #E16B8C;
+  font-size: larger;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.App-formula {
+  color: #00896C;
+  font-size: larger;
+  font-style: normal;
+  font-weight: normal;
 }
 
 @keyframes App-logo-spin {
