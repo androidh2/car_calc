@@ -8,6 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = { inputDate: 0
+                 , inputDist: 0
                  , outputKin: 0
     };
   }
@@ -26,6 +27,15 @@ class App extends Component {
             <FormControl type="number" placeholder="入力してください" 
                          value={this.state.inputDate}
                          onChange={this.onChangeInputDate}/>
+            <ControlLabel>日</ControlLabel>
+          </FormGroup>
+
+          <FormGroup>
+            <ControlLabel>通勤距離</ControlLabel>
+            <FormControl type="number" placeholder="入力してください" 
+                         value={this.state.inputDist}
+                         onChange={this.onChangeInputDist}/>
+            <ControlLabel>km</ControlLabel>
           </FormGroup>
 
           <FormGroup>
@@ -36,7 +46,7 @@ class App extends Component {
           
           <FormGroup>
             <ControlLabel>算出式</ControlLabel>
-            <ControlLabel>{`125円×${this.state.inputDate}日×30km/10km`}</ControlLabel>
+            <ControlLabel>{`125円×${this.state.inputDate}日×${this.state.inputDist}km/10km`}</ControlLabel>
           </FormGroup>
 
           <FormGroup>
@@ -53,13 +63,21 @@ class App extends Component {
   onChangeInputDate = (event) => {
     this.setState({
         inputDate : event.target.value
-      , outputKin : this.calcKin(event)
+      , outputKin : this.calcKin(event.target.value, this.state.inputDist)
+    });
+  }
+
+  // 変更イベント：通勤距離
+  onChangeInputDist = (event) => {
+    this.setState({
+        inputDist : event.target.value
+      , outputKin : this.calcKin(this.state.inputDate, event.target.value)
     });
   }
   
   // 金額計算
-  calcKin = (event) => {
-    let myKingaku = 125*(event.target.value)*30/10;
+  calcKin = (myDate, myDist) => {
+    let myKingaku = 125*myDate*myDist/10;
     return myKingaku;
   }
 }
