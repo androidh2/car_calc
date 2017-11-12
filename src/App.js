@@ -76,6 +76,12 @@ class App extends Component {
             <ControlLabel>「申請日」は対象月の月末とすること。</ControlLabel>
           </FormGroup>
           
+          <footer>
+            <p>
+              <a href="https://github.com/androidh2/car_calc">開発状況（GitHub）</a>
+            </p>
+          </footer>
+          
         </body>
       </div>
     );
