@@ -29,6 +29,11 @@
   </metadata>
   <defs
      id="defs1375" />
+  <defs>
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css?family=Marck+Script|Ubuntu');
+    </style>
+  </defs>
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -60,7 +65,7 @@
        id="tp" />
     <text
        dy="-5"
-       style="font-size:26px;font-family:serif;fill:#61dafb"
+       style="font-size:26px;font-family:'Ubuntu', sans-serif;fill:#61dafb"
        dx="10"
        id="text1369"
        font-size="26">
