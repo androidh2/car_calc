@@ -30,9 +30,9 @@
   <defs
      id="defs1375" />
   <defs>
-    <style type="text/css">
-      @import url('https://fonts.googleapis.com/css?family=Marck+Script|Ubuntu');
-    </style>
+    <style type="text/css"><![CDATA[
+      @import url('https://fonts.googleapis.com/css?family=Ubuntu');
+    ]]></style>
   </defs>
   <sodipodi:namedview
      pagecolor="#ffffff"
@@ -65,7 +65,7 @@
        id="tp" />
     <text
        dy="-5"
-       style="font-size:26px;font-family:'Ubuntu', sans-serif;fill:#61dafb"
+       style="font-size:26px;font-family:'Ubuntu', serif;fill:#61dafb"
        dx="10"
        id="text1369"
        font-size="26">

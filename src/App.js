@@ -14,15 +14,28 @@ class App extends Component {
     };
   }
   
+  componentWillMount(){
+    // 前回値の読込
+    /*global localStorage*/
+    if (localStorage.inputDate!=null) {
+      this.state = {
+          inputDate: localStorage.inputDate
+        , inputDist: localStorage.inputDist
+        , outputKin : this.calcKin(localStorage.inputDate, localStorage.inputDist)
+      };
+    }
+  }
+  
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">経費精算（自家用車）</h1>
-        </header>
-        
+        <head>
+        </head>
         <body className="App-intro">
+          <header className="App-header">
+            <img src={logo} className="App-logo" alt="logo" />
+            <h1 className="App-title">経費精算（自家用車）</h1>
+          </header>
         
           <Table className="Table-Main">
             <tbody>
@@ -105,6 +118,11 @@ class App extends Component {
   
   // 金額計算
   calcKin = (myDate, myDist) => {
+    
+    // 前回値の保存
+    localStorage.inputDate=myDate;
+    localStorage.inputDist=myDist;
+    
     let myKingaku = 125*myDate*myDist/10;
     return myKingaku;
   }
