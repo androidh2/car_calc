@@ -38,6 +38,7 @@ footer {
 .Table-Main {
   margin-left: auto;
   margin-right: auto;
+  margin-top: 12px;
   text-align: right;
 }
 
@@ -48,11 +49,25 @@ footer {
   font-weight: bold;
 }
 
+.App-result td {
+  padding-top: 20px;
+}
+
 .App-formula {
   color: #00896C;
   font-size: larger;
   font-style: normal;
   font-weight: normal;
+}
+
+.App-remark {
+  margin: 30px 0 10px 0;
+  font-size: smaller;
+}
+
+.App body footer {
+  padding: 2px 0px;
+  background-color: #86A697;
 }
 
 @keyframes App-logo-spin {

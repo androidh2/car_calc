@@ -72,6 +72,8 @@
       <textPath
          id="textPath1367"
          xlink:href="#tp" textLength="150">Clarice Art</textPath>
+      <animate attributeName="dx" from="0" to="320"
+               begin="0s" dur="10s" repeatCount="indefinite"/>
     </text>
   </g>
 </svg>

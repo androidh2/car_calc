@@ -81,10 +81,10 @@ class App extends Component {
 
           <div className="App-formula">
             <ControlLabel></ControlLabel>
-            <ControlLabel>{`算出式【125円×${this.state.inputDate}日×${this.state.inputDist}km/10km】`}</ControlLabel>
+            <ControlLabel>{`【125円×${this.state.inputDate}日×${this.state.inputDist}km/10km】`}</ControlLabel>
           </div>
 
-          <FormGroup>
+          <FormGroup className="App-remark">
             <ControlLabel>注記）</ControlLabel>
             <ControlLabel>「申請日」は対象月の月末とすること。</ControlLabel>
           </FormGroup>
