@@ -18,11 +18,11 @@ class App extends Component {
     // 前回値の読込
     /*global localStorage*/
     if (localStorage.inputDate!=null) {
-      this.state = {
+      this.setState({
           inputDate: localStorage.inputDate
         , inputDist: localStorage.inputDist
         , outputKin : this.calcKin(localStorage.inputDate, localStorage.inputDist)
-      };
+      });
     }
   }
   
