@@ -33,11 +33,13 @@ class App extends Component {
         <head>
         </head>
         <body className="App-intro">
+          <div className="App-version">
+            <text>Ver 1.0.2</text>
+          </div>
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
             <h1 className="App-title">経費精算（自家用車）</h1>
           </header>
-        
           <Table className="Table-Main">
             <tbody>
               <tr>
