@@ -34,7 +34,7 @@ class App extends Component {
         </head>
         <body className="App-intro">
           <div className="App-version">
-            <text>Ver 1.0.2</text>
+            <text>Ver 1.0.3</text>
           </div>
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
