@@ -13,7 +13,7 @@ class App extends Component {
                  , outputKin: 0
     };
     // ガソリン単価
-    this.myTanka = 151;
+    this.myTanka = 149;
   }
 
   componentWillMount(){
@@ -35,7 +35,7 @@ class App extends Component {
         </head>
         <body className="App-intro">
           <div className="App-version">
-            <text>Ver 1.0.8</text>
+            <text>Ver 1.0.9</text>
           </div>
           <header className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
