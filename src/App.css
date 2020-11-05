@@ -13,6 +13,14 @@ footer {
   height: 80px;
 }
 
+.App-term {
+  padding-right: 10px;
+  background-color: #222;
+  color: #B5CAA0;
+  text-align: left;
+  float:left;
+}
+
 .App-version {
   padding-right: 10px;
   background-color: #222;
