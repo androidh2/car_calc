@@ -13,7 +13,9 @@ class App extends Component {
                  , outputKin: 0
     };
     // ガソリン単価
-    this.myTanka = 162;
+    this.myTanka = 175;
+    // 適用期間
+    this.myKikan = "2022/4/1～2022/9/30";
   }
 
   componentWillMount(){
@@ -35,7 +37,7 @@ class App extends Component {
         </head>
         <body className="App-intro">
           <div className="App-term">
-            <text>適用期間：2021/10/1～2022/3/31</text>
+            <text>{`適用期間：${this.myKikan}`}</text>
           </div>
           <div className="App-version">
             <text>Ver 1.1.0</text>
