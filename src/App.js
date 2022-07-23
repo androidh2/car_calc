@@ -42,7 +42,7 @@ class App extends Component {
 
     // 前回値の読込
     /*global localStorage*/
-    if (localStorage.inputDate!=null) {
+    if (localStorage.inputDist!=null) {
 
       // 交通用具
       // - localStorageは文字列で保存されるぽいので変換する。
@@ -104,8 +104,7 @@ class App extends Component {
                 <td>
                   <FormControl type="number" placeholder="入力してください"
                                value={this.state.inputDate}
-                               onChange={this.onChangeInputDate}
-                               disabled={false}/>
+                               onChange={this.onChangeInputDate}/>
                 </td>
                 <td>
                   <ControlLabel>日</ControlLabel>
@@ -132,13 +131,15 @@ class App extends Component {
                   <FormGroup>
                     <Radio name="rbnKotuyogu"
                            checked={this.state.kotuyogu === this.enmKotuyogu.ZIDOSYA}
-                           onChange={()=>this.setState({kotuyogu : this.enmKotuyogu.ZIDOSYA})}
+                           onChange={()=>{this.setState({kotuyogu : this.enmKotuyogu.ZIDOSYA});
+                                          localStorage.kotuyogu = this.enmKotuyogu.ZIDOSYA;}}
                            inline>
                       自動車
                     </Radio>
                     <Radio name="rbnKotuyogu"
                            checked={this.state.kotuyogu === this.enmKotuyogu.NIRINSYA}
-                           onChange={()=>this.setState({kotuyogu : this.enmKotuyogu.NIRINSYA})}
+                           onChange={()=>{this.setState({kotuyogu : this.enmKotuyogu.NIRINSYA});
+                                          localStorage.kotuyogu = this.enmKotuyogu.NIRINSYA}}
                            inline>
                       二輪車
                     </Radio>
@@ -204,7 +205,7 @@ class App extends Component {
       inputDist : event.target.value ,
     });
     // 前回値の保存
-    this.saveZenkaiti();
+    localStorage.inputDist = event.target.value;
   }
 
   // 変更イベント：月間労働日数
@@ -214,13 +215,7 @@ class App extends Component {
       inputDate : event.target.value ,
     });
     // 前回値の保存
-    this.saveZenkaiti();
-  }
-
-  // 変更イベント：平均燃費
-  onChangeNenpi = () => {
-    // 前回値の保存（交通用具）
-    this.saveZenkaiti();
+    localStorage.inputDate = event.target.value;
   }
 
   // 金額計算
@@ -230,12 +225,6 @@ class App extends Component {
     return myKingaku;
   }
 
-  // 前回値の保存
-  saveZenkaiti = () => {
-    localStorage.inputDist = this.state.inputDist;
-    localStorage.inputDate = this.state.inputDate;
-    localStorage.kotuyogu = this.state.kotuyogu;
-  }
 }
 
 export default App;
