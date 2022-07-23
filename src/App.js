@@ -20,8 +20,6 @@ class App extends Component {
     // 適用期間
     this.myKikan = "2022/4/1～2022/9/30";
 
-    // 平均月間所定労働日数
-    this.myDate = 20;
     // ガソリン単価
     this.myTanka = 175;
     // 平均燃費
@@ -31,9 +29,11 @@ class App extends Component {
 
     // state定義
     // - 通勤距離
+    // - 月間労働日数
     // - 交通用具
     this.state = {
       inputDist : 0 ,
+      inputDate : 0 ,
       kotuyogu  : this.enmKotuyogu.ZIDOSYA ,
     };
   }
@@ -60,6 +60,7 @@ class App extends Component {
       // state更新
       this.setState({
         inputDist : localStorage.inputDist ,
+        inputDate : localStorage.inputDate ,
         kotuyogu  : tmp,
       });
     }
@@ -98,12 +99,13 @@ class App extends Component {
               </tr>
               <tr>
                 <td>
-                  <ControlLabel>平均月間労働日数</ControlLabel>
+                  <ControlLabel>月間労働日数</ControlLabel>
                 </td>
                 <td>
                   <FormControl type="number" placeholder="入力してください"
-                               value={this.myDate}
-                               disabled/>
+                               value={this.state.inputDate}
+                               onChange={this.onChangeInputDate}
+                               disabled={false}/>
                 </td>
                 <td>
                   <ControlLabel>日</ControlLabel>
@@ -175,13 +177,13 @@ class App extends Component {
           </Table>
 
           <div className="App-formula">
-            <ControlLabel></ControlLabel>
-            <ControlLabel>{`　 【${this.state.inputDist}km×${this.myDate}日×${this.myTanka}円/${this.myNenpi.get(this.state.kotuyogu)}km】`}</ControlLabel>
+            <ControlLabel>{`　【${this.state.inputDist}km×${this.state.inputDate}日×${this.myTanka}円/${this.myNenpi.get(this.state.kotuyogu)}km】`}</ControlLabel>
           </div>
 
           <FormGroup className="App-remark">
-            <ControlLabel>注記）</ControlLabel>
-            <ControlLabel>「申請日」は対象月の月末とすること。</ControlLabel>
+            <p>
+              <a href="https://sites.google.com/clariceart.co.jp/portal/materials/expense-report-rules/001?authuser=0">計算式など（社内ポータル）</a>
+            </p>
           </FormGroup>
 
           <footer>
@@ -205,6 +207,16 @@ class App extends Component {
     this.saveZenkaiti();
   }
 
+  // 変更イベント：月間労働日数
+  onChangeInputDate = (event) => {
+    // stateの更新
+    this.setState({
+      inputDate : event.target.value ,
+    });
+    // 前回値の保存
+    this.saveZenkaiti();
+  }
+
   // 変更イベント：平均燃費
   onChangeNenpi = () => {
     // 前回値の保存（交通用具）
@@ -213,15 +225,16 @@ class App extends Component {
 
   // 金額計算
   calcKin = () => {
-    let myKingaku = this.myTanka*this.myDate*this.state.inputDist/this.myNenpi.get(this.state.kotuyogu);
+    let myKingaku = this.myTanka*this.state.inputDate*this.state.inputDist/this.myNenpi.get(this.state.kotuyogu);
     myKingaku = Math.round(myKingaku); // 端数処理（四捨五入）
     return myKingaku;
   }
 
   // 前回値の保存
   saveZenkaiti = () => {
-    localStorage.kotuyogu = this.state.kotuyogu;
     localStorage.inputDist = this.state.inputDist;
+    localStorage.inputDate = this.state.inputDate;
+    localStorage.kotuyogu = this.state.kotuyogu;
   }
 }
 
