@@ -18,7 +18,7 @@ class App extends Component {
     // Version
     this.myVersion = "2.0.0";
     // 適用期間
-    this.myKikan = "2022/4/1～2022/9/30";
+    this.myKikan = "2022/10/1～2023/3/31";
 
     // ガソリン単価
     this.myTanka = 175;
