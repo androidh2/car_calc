@@ -18,10 +18,10 @@ class App extends Component {
     // Version
     this.myVersion = "2.0.0";
     // 適用期間
-    this.myKikan = "2023/10/1～2024/3/31";
+    this.myKikan = "2024/4/1～2024/9/30";
 
     // ガソリン単価
-    this.myTanka = 180;
+    this.myTanka = 179;
     // 平均燃費
     this.myNenpi = new Map();
     this.myNenpi.set(this.enmKotuyogu.ZIDOSYA,10);  // 自動車
