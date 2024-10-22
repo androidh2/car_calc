@@ -15,7 +15,7 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    // Version
+    // Version情報
     this.myVersion = "2.0.0";
     // 適用期間
     this.myKikan = "2024/10/1～2025/3/31";
