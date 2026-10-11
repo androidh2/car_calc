@@ -16,7 +16,7 @@ class App extends Component {
     super(props);
 
     // Version情報
-    this.myVersion = "3.0.0";
+    this.myVersion = "3.0.1";
     // 適用期間
     this.myKikan = "2026/10/1～2027/3/31";
 
